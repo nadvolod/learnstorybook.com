@@ -2,6 +2,7 @@ const isDeployPreview = process.env.CONTEXT === 'deploy-preview';
 const permalink = isDeployPreview ? process.env.DEPLOY_PRIME_URL : 'https://learnstorybook.com';
 
 module.exports = {
+  pathPrefix: `/tutorials`,
   siteMetadata: {
     title: 'Storybook Tutorials',
     description:
@@ -77,7 +78,21 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     ...(process.env.GOOGLE_ANALYTICS_TRACKING_ID && !isDeployPreview

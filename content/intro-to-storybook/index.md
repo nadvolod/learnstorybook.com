@@ -93,7 +93,7 @@ twitterShareText: 'I’m learning Storybook! It’s a great dev tool for UI comp
   </div>
 </div>
 
-![Taskbox UI](/intro-to-storybook/ss-browserchrome-taskbox-learnstorybook.png)
+![Taskbox UI](/ss-browserchrome-taskbox-learnstorybook.png)
 
 Taskbox, a task management UI (similar to Asana), complete with multiple item types and states. We'll go from building simple UI components to assembling screens. Each chapter illustrates a different aspect of developing UIs with Storybook.
 
