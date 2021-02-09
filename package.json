@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "author": "Tom Coleman <tom@chromatic.com>, Dominic Nguyen <dom@chromatic.com>",
   "dependencies": {
-    "@storybook/design-system": "^5.1.0",
+    "@storybook/design-system": "^5.4.7",
     "formik": "^1.5.7",
-    "gatsby": "^2.25.0",
+    "gatsby": "^2.32.3",
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-google-analytics": "^2.3.0",
     "gatsby-plugin-layout": "^1.0.15",
