@@ -60,6 +60,11 @@ module.exports = {
           en: 6.1,
         },
       },
+      'creating-addons': {
+        react: {
+          en: 6.1,
+        },
+      },
     },
   },
   plugins: [
@@ -77,7 +82,22 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
-    `gatsby-transformer-remark`,
+    // `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     ...(process.env.GOOGLE_ANALYTICS_TRACKING_ID && !isDeployPreview

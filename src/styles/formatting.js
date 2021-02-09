@@ -38,6 +38,9 @@ export const guideFormatting = css`
     font-size: ${typography.size.s2}px;
     line-height: 24px;
     margin-right: 6px;
+    position: relative;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-in-out;
 
     &:last-of-type {
       margin-right: 0;
@@ -52,13 +55,25 @@ export const guideFormatting = css`
       transition: all 250ms ease-out;
       display: inline-block;
       text-decoration: none;
-      transform: translate3d(0, 0, 0);
     }
-    &:hover {
-      border: 1px solid ${styles.color.border};
-      border-color: ${rgba(styles.color.secondary, 0.5)};
-      transform: translate3d(0, -3px, 0);
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
       box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    &:hover {
+      border-color: ${rgba(styles.color.secondary, 0.5)};
+      &:after {
+        opacity: 1;
+      }
     }
   }
 `;
