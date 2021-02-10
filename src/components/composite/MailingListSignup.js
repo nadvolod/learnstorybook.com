@@ -12,6 +12,8 @@ const MailingListFormUIWrapper = styled.div`
 const EmailInput = styled(Input)`
   flex: 1;
   && input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     border-top-left-radius: ${styles.spacing.borderRadius.small}px;
     border-bottom-left-radius: ${styles.spacing.borderRadius.small}px;
   }

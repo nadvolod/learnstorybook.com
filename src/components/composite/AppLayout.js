@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import { global } from '@storybook/design-system';
 import Helmet from 'react-helmet';
-import Header from './Header';
-import Footer from './Footer';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 const { GlobalStyle } = global;
 
@@ -39,6 +39,7 @@ const query = graphql`
 
 const getHeaderInvertedState = pathname => {
   const pathParts = pathname.split('/').filter(p => !!p && p !== 'tutorials');
+  console.log(pathParts);
   // This will need to get "smarter" if the hierarchy of pages/guides changes.
   return pathParts.length === 1 && pathParts[0] !== 'team';
 };
@@ -81,11 +82,7 @@ const TemplateWrapper = ({ location: { pathname }, children }) => (
           />
         </Helmet>
 
-        <Header
-          guides={guides}
-          githubUrl={githubUrl}
-          isInverted={getHeaderInvertedState(pathname)}
-        />
+        <Header guides={guides} githubUrl={githubUrl} inverse={getHeaderInvertedState(pathname)} />
 
         {children}
         <Footer guides={guides} />

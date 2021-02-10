@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
+import { Header } from './Header';
 
 const BlueBackground = styled.div`
   padding: 20px;
@@ -38,6 +38,6 @@ Default.args = {
 export const Inverted = Story.bind({});
 Inverted.args = {
   ...Default.args,
-  isInverted: true,
+  inverse: true,
 };
 Inverted.decorators = [story => <BlueBackground>{story()}</BlueBackground>];
